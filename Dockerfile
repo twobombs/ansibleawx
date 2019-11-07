@@ -10,7 +10,7 @@ RUN chmod +x docker-compose-Linux-x86_64 && mv docker-compose-Linux-x86_64 /usr/
 RUN curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 RUN source /etc/bash_completion.d/docker-compose
 
-COPY run /root/
+COPY run /root/run
 RUN chmod 755 /root/run
 
 EXPOSE 80,443
