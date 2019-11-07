@@ -1,6 +1,6 @@
 # dockerized https://computingforgeeks.com/how-to-install-latest-docker-compose-on-linux/
 
-FROM ubuntu:18.04
+FROM twobombs/deploy-nvidia-docker
 
 RUN echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | tee /etc/apt/sources.list.d/ansible.list
 RUN apt update && apt install -y gnupg && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 && apt update && apt install -y --allow-unauthenticated ansible docker.io curl && apt-get clean all
