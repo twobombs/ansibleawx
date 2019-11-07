@@ -1,5 +1,7 @@
 docker-compose up -d
 
+cd awx/installer/ && ansible-playbook -i inventory install.yml
+
 echo "everything counts in large amounts"
 
 tail -f /dev/null
