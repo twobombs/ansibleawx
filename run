@@ -1,0 +1,5 @@
+docker-compose up -d
+
+echo "everything counts in large amounts"
+
+tail -f /dev/null
