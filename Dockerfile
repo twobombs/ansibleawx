@@ -10,7 +10,6 @@ RUN apt install -y nodejs npm
 RUN npm install npm --global
 RUN apt -y install python-pip git pwgen vim
 RUN pip install requests==2.14.2 && pip install docker
-RUN source /etc/bash_completion.d/docker-compose
 RUN git clone --depth 50 https://github.com/ansible/awx.git
 
 COPY run /root/run
