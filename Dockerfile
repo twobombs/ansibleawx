@@ -17,5 +17,5 @@ RUN git clone --depth 50 https://github.com/ansible/awx.git
 COPY run /root/run
 RUN chmod 755 /root/run
 
-EXPOSE 80,443
+EXPOSE 80 443
 ENTRYPOINT /root/run
