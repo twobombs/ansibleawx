@@ -2,16 +2,16 @@
 
 FROM ubuntu:18.04
 
-RUN apt update && apt install -y gnupg software-properties-common wget && apt-add-repository -y ppa:ansible/ansible-2.7 && apt update && apt install -y ansible docker.io curl && apt-get clean all
+# "cause you've never seen a miracle" 
+RUN apt-get update && apt -y install nodejs npm
+RUN npm install npm --global
+RUN apt -y remove python && apt -y install python3
+
+RUN apt update && apt install -y gnupg software-properties-common wget && apt-add-repository -y ppa:ansible/ansible && apt update && apt install -y ansible docker.io curl && apt-get clean all
 RUN curl -s https://api.github.com/repos/docker/compose/releases/latest | grep browser_download_url | grep docker-compose-Linux-x86_64 | cut -d '"' -f 4 | wget -qi -
 
 RUN chmod +x docker-compose-Linux-x86_64 && mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
 RUN curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
-
-# "cause you've never seen a miracle" 
-RUN apt -y remove python && apt -y install python3
-RUN apt-get update && apt -y install nodejs npm
-RUN npm install npm --global
 
 RUN apt -y install python3-pip git pwgen vim
 RUN pip3 install requests==2.14.2 && pip3 install docker && pip3 install docker-compose
