@@ -3,7 +3,7 @@
 FROM ubuntu:18.04
 
 # "cause you've never seen a miracle" 
-RUN apt-get update && apt -y install nodejs npm
+RUN apt update && apt -y install nodejs npm
 RUN npm install npm --global
 RUN apt -y remove python && apt -y install python3
 
