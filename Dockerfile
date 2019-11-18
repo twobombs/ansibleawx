@@ -8,11 +8,13 @@ RUN curl -s https://api.github.com/repos/docker/compose/releases/latest | grep b
 RUN chmod +x docker-compose-Linux-x86_64 && mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
 RUN curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
-RUN apt install -y nodejs npm
+# "cause you've never seen a miracle" 
+RUN apt -y remove python && apt -y install python3
+RUN apt -y install nodejs npm
 RUN npm install npm --global
 
-RUN apt -y install python-pip git pwgen vim
-RUN pip install requests==2.14.2 && pip install docker && pip install docker-compose
+RUN apt -y install python3-pip git pwgen vim
+RUN pip3 install requests==2.14.2 && pip3 install docker && pip3 install docker-compose
 RUN git clone --depth 50 https://github.com/ansible/awx.git
 
 RUN cd /var/lib && mkdir awx && cd awx && mkdir projects && cd /
