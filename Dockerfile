@@ -10,7 +10,7 @@ RUN curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/comp
 
 # "cause you've never seen a miracle" 
 RUN apt -y remove python && apt -y install python3
-RUN apt -y install nodejs npm
+RUN apt-get update && apt -y install nodejs npm
 RUN npm install npm --global
 
 RUN apt -y install python3-pip git pwgen vim
