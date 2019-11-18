@@ -14,7 +14,7 @@ RUN chmod +x docker-compose-Linux-x86_64 && mv docker-compose-Linux-x86_64 /usr/
 RUN curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
 RUN apt -y install python3-pip git pwgen vim
-RUN pip3 install requests==2.14.2 && pip3 install docker && pip3 install docker-compose
+RUN pip3 install requests==2.14.2 && pip3 install docker-py && pip3 install docker-compose
 RUN git clone --depth 50 https://github.com/ansible/awx.git
 
 RUN cd /var/lib && mkdir awx && cd awx && mkdir projects && cd /
