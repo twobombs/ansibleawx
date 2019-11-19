@@ -2,6 +2,8 @@
 
 Matroshka Ansiburu AWX desu desu - "for Great Justice"
 
+- The VM is Lava -  #k8services
+
 start container with your favorite orchestrator with the volume
 
 "-v /var/run/docker.sock:/var/run/docker.sock:ro" added
