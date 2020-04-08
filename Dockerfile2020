@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 # "You newer models are happy scraping the shit... because you've never seen a miracle." 
-RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt install -y nodejs npm && npm install npm --global
+RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt upgrade -y && apt install -y nodejs npm && npm install npm --global
 RUN apt update && export DEBIAN_FRONTEND=noninteractive &&  apt install -y apt-transport-https wget gnupg python3 python3-pip python-dev tree libpq-dev && apt clean all
 RUN apt update && export DEBIAN_FRONTEND=noninteractive &&  apt install -y gnupg software-properties-common wget && apt install -y docker.io curl && apt-get clean all
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
